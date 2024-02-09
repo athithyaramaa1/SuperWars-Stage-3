@@ -24,6 +24,7 @@ const PLAYERS = [
 const initPlayers = (players) => players.map(player => ({
     name: player,
     strength: getRandomStrength(),
+    img: "images/super-"+(i+1)+".png"
 }));
 
 const getRandomStrength = () => Math.ceil(Math.random() * 100);
