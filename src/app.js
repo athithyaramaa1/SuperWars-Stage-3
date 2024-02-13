@@ -21,10 +21,10 @@ const PLAYERS = [
     "Slingo"
 ];
 
-const initPlayers = (players) => players.map(player => ({
+const initPlayers = (players) => players.map((player, i) => ({
     name: player,
     strength: getRandomStrength(),
-    img: "images/super-"+(i+1)+".png"
+    img: `images/super-${i + 1}.png`
 }));
 
 const getRandomStrength = () => Math.ceil(Math.random() * 100);
@@ -32,7 +32,7 @@ const getRandomStrength = () => Math.ceil(Math.random() * 100);
 const buildPlayers = (players, type) => players
     .filter(player => player.name.includes(type))
     .map(player => `<div class="player">
-        <img src="${player.image}" alt="${player.name}" class="player-image">
+        <img src="${player.img}" alt="${player.name}" class="player-image">
         <p class="player-name">${player.name}</p>
         <p class="player-strength">${player.strength}</p>
     </div>`)
